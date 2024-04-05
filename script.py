@@ -138,6 +138,7 @@ if __name__=='__main__':
         cfg = yaml.load(f, Loader=yaml.FullLoader)
     type=cfg['type']
     pages=cfg['pages']
+    filename=cfg['filename']
     for i in range(1,pages+1):
         url=f"https://www.shine.com/job-search/data-analyst-jobs-{i}?q={type}"
         get(url)
@@ -165,7 +166,7 @@ if __name__=='__main__':
     active()
     df_sorted=df_new.sort_values(by='experience in int')
     df_sorted.drop(columns=['experience'],inplace=True)
-    df_sorted.to_csv(f'shine_jobs{type}.csv',index=False)
+    df_sorted.to_csv(f'{filename}{type}.csv',index=False)
     
     
     

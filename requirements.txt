@@ -1,0 +1,7 @@
+requests
+bs4
+pandas
+datetime 
+dateutil.relativedelta 
+re
+pyyaml
